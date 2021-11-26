@@ -1,0 +1,124 @@
+/* =============
+    Style Reset
+   ============= */
+header, #img-div, 
+blockquote, #main {
+    margin: 0 6rem;
+}
+
+/* ========
+    Index
+   ======== 
+1. Body
+2. Header
+3. Image
+4. Tribute-info
+5. Blockquote
+*/
+
+/* =========
+    1. Body
+   ========= */
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 5rem 1rem;
+    background-color: #cfcfb3;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ===========
+    2. Header
+   =========== */
+header {
+    text-align: center;
+}
+#title {
+    font-size: clamp(2rem, 3rem, 4rem);
+}
+header p {
+    font-size: clamp(0.8rem, 1.2rem, 1.4rem);
+}
+
+/* ==========
+    3. Image
+   ========== */
+#img-div {
+    max-width: 70rem;
+    padding: 2rem;
+    background-color: #346756;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+#img-caption {
+    margin-top: 1.2rem;
+    color: #cfcfb3;
+    text-align: center;
+}
+
+/* =================
+    4. Tribute-info
+   ================= */
+#tribute-info {
+    max-width: 50rem;
+    margin: 0 auto;
+}
+#tribute-info h3 {
+    text-align: center;
+    margin: 5rem;
+    font-size: 1.5rem;
+}
+#tribute-info ul {
+    max-width: 45rem;
+    line-height: 2rem;
+}
+
+/* ================
+    4. Blockquote
+   ================ */
+blockquote {
+    max-width: 45rem;
+    font-style: italic;
+    margin: 2rem auto;
+}
+
+#main h3:last-child {
+    margin: 2rem;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+@media screen and (max-width: 720px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+    }
+
+    header, #img-div,   
+    blockquote, #main {
+        margin: 0 1rem;
+    }
+
+}
+
+@media screen and (max-width: 1100px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+    }
+
+    header, #img-div, 
+    blockquote, #main {
+        margin: 0 1rem;
+    }
+
+}

@@ -1,0 +1,390 @@
+/* ===========
+    1. RESET
+   =========== */
+/* 1.1 HTML */
+html {
+    font-size: 62.5%; 
+    box-sizing: border-box;
+    font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+/* 1.2 BODY */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(25,35,46,1);
+}
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    background-color: rgba(25,35,46,1);
+}
+
+/* ============
+    2. NAVBAR
+   ============ */
+/* Mobile first */
+
+/* 2.1 Nav style */
+.nav-menu {
+    position: relative;
+    width: 100%;
+}
+
+/* 2.2 Menu style */
+.nav__list {
+    margin: .8em;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-118%);
+    transition: transform .3s;
+    position: absolute;
+    
+}
+
+.show {
+    transform: translateX(0);
+    position: relative;
+    display: flex;
+}
+
+/* 2.3 Items style */
+.list-item {
+    list-style-type: none;
+    color: rgba(215,218,221,1);
+    font-size: 1.8em;
+    padding: .3em;
+}
+
+.list-item:hover {
+    color: rgba(75,136,162);
+    cursor: pointer;
+}
+
+.under:hover {
+    border-bottom: .1em solid rgba(75,136,162);
+}
+
+/* 2.4 Burger-Menu style */
+.toggle-menu {
+    background-color: rgba(75,136,162,1);
+    width: 4em;
+    height: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: .5em;
+}
+.toggle-responsive {
+    transform: scale(-1.1);
+    transition: transform .3s;
+} 
+
+.toggle-menu__icon {
+    background-color: rgba(215,218,221,1);
+    width: 2.5em;
+    height: .4em;
+    border-radius: .2em;
+    position: relative;
+}
+
+.toggle-menu__icon::after, .toggle-menu__icon::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 2.5em;
+    height: .4em;
+    border-radius: .2em;
+    top: -1em;
+    background-color: rgba(215,218,221,1);
+}
+.toggle-menu__icon::after {
+    top: 1em;
+}
+
+/* 2.5 Menu positions */
+.nav__list-left {
+    display: flex;
+    align-items: center;
+}
+.nav__list-right {
+    display: flex;
+    align-items: center;
+}
+
+/* 2.6 Logo style */
+.logo-align img {
+    display: block;
+    
+}
+
+.logo-align {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    margin: 0 .5em;
+}
+
+.logo {
+    display: none;
+}
+
+/* 2.7 Menu Media Querys - Tablet - Desktop */
+@media screen and (min-width: 530px) {
+    .hide {
+        position: absolute;
+        transform: translateX(-115%);
+        transition: transform .3s;
+    }
+    
+    .logo {
+        display: block;
+    }
+
+
+    .nav__list {
+        display: flex;
+        transform: translateX(0);
+        transition: transform .3s;
+        position: relative;
+        margin: 1em 2em;
+    }
+
+
+    .list-item {
+        font-size: 2em;
+    }
+
+    .list-item input {
+        width: 18em;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .nav__list {
+        display: flex;
+        flex-direction: row;
+        padding: 0 2em;
+    }
+
+    .nav__list-left {
+        flex: 1;
+    }
+
+    .nav__list-right {
+        align-items: center;
+        
+    }
+    header {
+        display: block;
+    }
+}
+
+/* 2.8 Search Container */
+.search-container {
+    display: flex;
+    border: .09em solid #fff;
+    border-radius: .2em;
+    padding: .2em .5em;
+}
+.list-item input {
+    padding: .1em;
+    border-radius: .2em;
+    border: none;
+    outline: none;
+    background-color: rgba(25,35,46,1);
+    width: 10em;
+    font-size: 1.5rem;
+}
+
+input:focus {
+    color: white;
+}
+
+@media screen and (min-width: 530px) {
+    .list-item input {
+        width: 18em;
+    }
+}
+
+/* 2.9 User style */
+.circle {
+    padding: 0 .3em 0 .8em;
+}
+.fa-user-circle {
+    font-size: 1.5em;
+    color: rgba(75,136,162);
+}
+
+.user {
+    padding-left: .1em;
+}
+.fa-sort-down {
+    padding-left: .3em;
+}
+
+/* ===================
+    3. MOVIE GALLERY
+   =================== */
+
+/* 3.1 Gallery style */
+.main__gallery {
+    margin: 0;
+    padding: 0 2em;
+}
+
+/* 3.2 Movie Galley container */
+.main__gallery-container {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+}
+
+/* 3.3 Cards style */
+.main__gallery-cards {
+    margin: .5em;
+    padding: .1em;
+}    
+
+.gallery-card {
+    display: flex;
+    margin: 0;
+    position: relative;
+}
+
+.poster {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* 3.4 Cards description */
+.cards__description {
+    display: flex;
+    align-items: center;
+}
+.cards__description-left {
+    flex: 1;
+}
+.cards__description-right {
+    margin: 0;
+    padding: 1em 1.5em;
+}
+.cards__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.cards__list-item {
+    list-style-type: none;
+    font-size: 1.8em;
+    padding: .1em .5em;
+    color: rgba(129,151,164,1)
+}
+
+.cross {
+    clip-path: polygon(0 45%, 47% 45%, 47% 0, 55% 0, 55% 45%, 100% 45%, 100% 50%, 55% 50%, 55% 100%, 47% 100%, 47% 50%, 0 50%);
+    background-color: rgba(129,151,164,1);
+    width: 2em;
+    height: 2em;
+    padding: .1em;
+    position: relative;
+}
+
+[data-title]::before {
+    content: attr(data-title);
+    position: absolute;
+    color: rgba(0,160,214,1);
+    font-size: 1.5em;
+    border: 1px solid red;
+    background-color: rgba(129,151,164,1);
+    top: -20px;
+    left: -40px;
+    width: 10rem;
+}
+
+
+
+/* 3.5 Text info */
+.text {
+    color: rgba(255,255,255,1);
+    font-size: 1.5em;
+    margin: 0;
+    padding: .8em .1em .1em;
+}
+
+/* 3.6 Cards extra style */
+.view {
+    border-bottom: .3em solid rgba(0,160,214,1) ;
+}
+
+/* ===========
+    4. MODAL
+   =========== */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5em auto;
+}
+
+.center {
+    
+    width: 28rem;
+    height: 15.75rem;
+}
+
+.play {
+    position: absolute;
+    color: rgba(129,151,164,1);
+    top: 80%;
+    left: 5%;
+    font-size: 3.5em;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.closeBtn {
+    display: flex;
+    align-self: flex-end;
+    color:  #f1f2f6;
+    font-size: 4rem;
+    width: 6rem;
+    height: 6rem;
+    transition: transform linear 10ms ;
+}
+
+.closeBtn:hover,
+.closeBtn:focus {
+    color: rgb(250, 7, 7);
+    text-decoration: none;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+@media screen and (min-width: 530px) {
+    .center {
+        width: 56rem;
+        height: 31.5rem;
+    }
+}

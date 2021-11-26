@@ -1,0 +1,54 @@
+{
+    "name": "Contador App VUE",
+    "short_name": "VUE counter",
+    "description": "This is a simply counter made with VUE. It´s from an UDEMY course, VUE desde 0",
+    "background_color": "#34495e",
+    "theme_color": "rgba(65, 184, 131, 1)",
+    "start_url": "./?umt_source=web_app_manifest",
+    "scope": "./",
+    "lang": "es",
+    "display": "fullscreen",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "./assets/img/48px_icon.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/img/16px_icon.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/img/32px_icon.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/img/64px_icon.png",
+            "sizes": "64x64",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/img/128px_icon.png",
+            "sizes": "128x128",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/img/256px_icon.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/img/512px_icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/img/1024px_icon.png",
+            "sizes": "1024x1024",
+            "type": "image/png"
+        }
+    ]
+}

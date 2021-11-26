@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Metadata para hacer una PWA (Progresive Web Aplication) -->
+    <!-- Primero le damos color a la barra / esto aplica para ANDROID -->
+    <meta name="theme-color" content="rgba(65, 184, 131, 1)">
+    <!-- Las 2 siguientes son optimizaciones SEO -->
+    <!-- Una etiqueta que le indicamos que es para MOBILE -->
+    <meta name="MobileOptimized" content="width">
+    <!-- Esta etiqueta sirve para indicar que es adaptada para el mobile -->
+    <meta name="HandheldFriendly" content="true">
+
+    <!-- barra de estado para dispositivo iOS -->
+    <!-- Lo que nos permite modificar la barra de iOS, modificamos apenas la seguridad -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- para este comando tenemos 3 propiedades (default, black, black-translucent) -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">  
+
+    <!-- Icons -->
+    <link rel="shortcut icon" href="assets/img/48px_icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/img/48px_icon.png">
+    <link rel="apple-touch-startup-image" href="assets/img/48px_icon.png">
+
+    <!-- Manifest -->
+    <!-- Es un objeto de JS y por ello se debe comenzar con {} y recordar que todo lo tenemos que meter entre "". Cuando la consola nos da error en el manifest.json la inspeccionar, eso nos indica lo que nos falta agregar dentro del archivo -->
+    <link rel="manifest" href="./manifest.json">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/100DaysOfCode/normalize.css">
+    <link rel="stylesheet" href="/100DaysOfCode/vueJS/02_contador/css/style.css">
+    
+    <title>VUE-ContadorApp</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <main id="app" class="app-main">
+        <h1 class="app-title">{{title}}</h1>
+        <h3 :class="this.count < 0 ? 'red' : 'green'" class="app-counter">{{count}}</h3>
+        <div class="app-btns">
+            <!-- Recordar que los métodos de los eventos los tenemos que correr en el JSON de JS -->
+            <!-- Aquí tenemos que indicarle cuál es le parámetro que debe tomar modCount('dis') -->
+            <!-- Otras de las funcionalidades es que podemos agregar otro parámetro para indicarle el rango con el cual debe sumar o restar => @click="modCount('dis', 50)" por cada vez que toque el botón restará de a 50 -->
+            <button v-on:click="modCount('dis')" class="btn decrease">-1</button>
+            
+            
+            <!-- podemos acortar el v-on:click="" utilizando el comando @click="" -->
+            <!-- Aquí tenemos que indicarle cuál es le parámetro que debe tomar modCount('') -->
+            <!-- Podemos pasar parámetros vacíos mdCount('', 50), sabe que para ese botón tiene que sumar +50. El parámetro vacío se lo está asignando a 'instruction' y si lo omitimos o lo reemplazamos tendremos error, por ello se deja el espacio vacío con las '' -->
+            <button @click="modCount" class="btn increase">+1</button>
+        </div>
+
+        <button @click="rstCount" class="btn reset">Reset</button>
+        
+    </main>
+    <div class="ball left"></div>
+    <div class="ball right"></div>
+
+<!-- NO OLVIDAR QUE POR CADA NUEVO APP CON VUE, TENGO QUE CREAR UN ARCHIVO JS Y DENTRO DE ÉL LLAMAR AL ELEMENTO VUE INICIALIZADO EN UNA VARIABLE. Luego tenemos que crear un objeto JSON -->
+    <script src="/100DaysOfCode/vueJS/02_contador/js/main.js"></script>
+
+    <!-- Tampoco tenemos que olvidar de montar nuestra App en un etiqueta script, luego de la script de js tenemos que montar la que creamos para VUE -->
+    <!-- <script>
+        const mountApp = app.mount('#app');
+    </script>  -->
+    <!-- Podemos hacer también => -->
+    <script src="/100DaysOfCode/vueJS/02_contador/js/mountApp.js"></script>
+
+    <!-- Creamos un script para cargar el "service worker", se puede escribir aquí mismo, pero conviene crear el archivo. Este archivo lleva una condicional 'if' que consulta si 'serviceWorker in navigator'. Lo que hace es preguntar si el service worker existe en el navegador. Si lo encuentra encontes realiza 'navigator.serviceWorker.register("./colocar el URL")' y ello registra la ruta del serviceWorker, que luego la misma devuelve una promesa. Se puede colocar './serviceworker' o le colocamos './sw.js', ambas hacen referencia a lo mismo. Como retorna una promesa tenemos que usar luego el .then() que nos devolverá un 'callback' que si se registra le podemos decir que devuelva un mensaje en console.log(). Si esto llega a fallar lo tomamos con un .catch() le indicamos que nos muestre el error que se produjo. No olvidar que luego tenemos que crear en el mismo nivel del index.html nuestro archivo sw.js. El 'serviceWorker' es lo que nos permite catchear la información para luego poder utilizar nuestro PWA offline -->
+    <script src="./loadSw.js"></script>
+    <!-- Luego en el archivo 'sw.js' es donde vamos a crear una const llamada 'CACHE_NAME'. Luego creamos otra constante con 'urlsToCache', ella va a recibir todas las urls que vamos a almacenar y por lo general se forma de un array. Cada vez que se conecte buscará actualizar la información -->
+
+</body>
+</html>

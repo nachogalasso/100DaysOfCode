@@ -1,0 +1,14 @@
+.good {
+    color: green;
+    font-size: 3rem;
+}
+
+.error {
+    color: red;
+    font-size: 3.5rem;
+}
+
+.range_error {
+    color: rgb(2, 2, 194);
+    font-size: 2rem;
+}

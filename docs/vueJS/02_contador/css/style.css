@@ -1,0 +1,123 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(52, 73, 94, 1);
+}
+
+.app-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+    margin-top: 3rem;
+    padding: 1rem;
+    border: .2rem solid rgba(65, 184, 131, 1);
+    width: 30rem;
+    background-color: rgba(224, 226, 219, .1);
+    -webkit-backdrop-filter: blur(2.2rem);
+    backdrop-filter: blur(2.2rem);
+    border-radius: 1rem;
+}
+
+.app-title {
+    color: rgba(65, 184, 131, 1);
+    font-variant: small-caps;
+    font-size: 3rem;
+}
+
+.app-counter {
+    color:rgba(64, 184, 131, 1);
+    font-size: 3rem;
+    margin: 0;
+    padding: 1rem;
+}
+
+.app-btns {
+    display: flex;
+    margin: 3rem 0;
+    justify-content: space-between;
+}
+
+.btn {
+    margin: 0 2rem;
+    padding: 1rem 2rem;
+    background-color: rgba(65, 184, 131, 1);
+    border-radius: 1rem;
+    border: none;
+    outline-offset: .3rem;
+    outline: .2rem solid rgba(65, 184, 131, 1);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: rgba(39, 56, 73, 1);
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgba(39, 56, 73, 1);
+    color: rgba(65, 184, 131, 1);
+}
+
+.reset {
+    margin: 1.5rem 0;
+}
+
+.reset:hover {
+    background-color: rgb(240, 93, 93);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.ball {
+    position: absolute;
+    width: 6rem;
+    height: 6rem;
+    background-color: rgb(209, 3, 3);
+    border-radius: 50%;
+}
+
+.left {
+    left: 36%;
+    top: 41%;
+    animation: slide 5s ease 2s infinite;
+}
+
+@keyframes slide {
+    0% {
+        top: 41%; 
+        left: 36%;
+    }
+    50% {
+        top: 41%;
+        left: 40%;
+    }
+}
+
+.right {
+    right: 36%;
+    top: 14%;
+    animation: slide2 5s ease 2s infinite;
+}
+
+@keyframes slide2 {
+    0% {
+        top: 14%;
+        right: 36%;
+    }
+    50% {
+        right: 36%;
+        top: 20%;
+    }
+}
+
+.red {
+    color: rgb(240, 93, 93);
+}
+
+.green {
+    color:rgba(65, 184, 131, 1)
+}

@@ -1,0 +1,336 @@
+body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-left: 1rem;;
+}
+
+.parent {
+    width: 320px;
+    height: 400px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px 8px #000;
+    resize: both;
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    background-color: #92Ec00;
+    color:#d30068;
+}
+
+@media screen and (min-width:550px) {
+    .parent {
+        width: 500px;
+        height: 500px;
+    }
+}
+
+@media screen and (min-width:800px){
+    .parent {
+        width: 720px;
+        height: 700px;
+    }
+}
+
+@media screen and (min-width:1300px) {
+    .parent {
+        width: 1100px;
+        height: 1000px;
+    }
+}
+
+/* 1. Super Centered */
+
+.centered {
+    display: grid;
+    place-items: center;
+    background-color: #004444;
+}
+
+
+.box {
+    width: 75px;
+    height: 75px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: #ff4900;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    writing-mode: vertical-rl
+}
+
+/* 2. Deconstructed Pancake */
+.pancake {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #7109aa;
+}
+
+.child {
+    flex: 1 1 150px; /* Streching */
+    /* flex: 0 1 150px; No Streching */
+    margin: 5px;
+    border: 1px solid black;
+    background-color: #ffff00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* 3. Sidebar Says */
+.sidebarSays {
+    display: grid;
+    grid-template-columns: minmax(150px, 25%) 1fr;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    background-color: #78E700;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.content {
+    background-color: #de0052
+}
+.content p {
+    padding: 0.5em;
+    font-size: 1.2em;
+}
+
+/* 4. Pancake Stack */
+.pStack {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.header, .main, .footer {
+    font-size: 2em;
+    padding: 0.5em;
+}
+
+.header {
+    background-color: #009999;
+}
+.main {
+    background-color: #ffaa00;
+}
+.footer {
+    background-color: #ff0000;
+}
+
+/* 5. Classic Holly Grail */
+.grail {
+    display: grid;
+    grid-template: auto 1fr auto / auto 1fr auto;
+}
+
+.gheader {
+    grid-column: 1 / 4;
+    background-color: #009999;
+    padding: 1.2em;
+    font-size: 1.8em;
+}
+
+.gsleft {
+    background-color: #1240ab;
+    grid-column: 1 / 2;
+    padding: 0.5em;
+    font-size: 1em;
+}
+.gmain {
+    background-color: #ffaa00;
+    grid-column: 2 / 3;
+    padding: 0.3em;
+    font-size: 1.5em;
+}
+.gsright {
+    background-color: #ff7400;
+    grid-column: 3 / 4;
+    padding: 0.5em;
+    font-size: 0.8em;
+}
+.gfooter {
+    background-color: #006363;
+    grid-column: 1 / 4;
+    padding: 0.5em;
+    font-size: 1.5em;
+}
+
+/* 6. Span Grid */
+.gspan {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.span12 {
+    background-color: #680bab;
+    grid-column: 1 / 13;
+}
+
+.span6 {
+    background-color: #abf000;
+    grid-column: 4 / 10;
+}
+
+.span4 {
+    background-color: #fff800;
+    grid-column: 2 / 8;
+}
+
+.span2 {
+    background-color: #c50080;
+    grid-column: 5 / 12
+}
+
+.span12, .span6,
+.span4, .span2 {
+    display: grid;
+    place-items: center;
+    font-size: 1.5em;
+    border-radius: 10px;
+}
+
+/* 7. RAM (Repeat, Auto, Minmax) */
+.ram {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 1em;
+    padding: 0.5em;
+}
+
+.box1 {
+    background-color: #00AF64;
+}
+.box2 {
+    background-color: #ffb800;
+}
+.box3 {
+    background-color: #1729b0;
+}
+.box4{
+    background-color: #ff4900;
+}
+
+.box1, .box2,
+.box3, .box4 {
+    display: grid;
+    place-items: center;
+    font-size: 2em;
+    border-radius: 10px;
+}
+
+/* 8. Line Up */
+.lineup {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.img {
+    width: 100%;
+    height: 100px;
+    border: 1px solid black;
+    margin: 0.5em 0;
+}
+
+.card1 {
+    background-color: #b2f63d;
+}
+.card1 .img {
+    background-color: #e83a93;
+}
+
+.card2 {
+    background-color: #33cec3;
+}
+.card2 .img {
+    background-color: #ff9340;
+}
+
+.card3 {
+    background-color: #38e05d;
+}
+.card3 .img {
+    background-color: #ff5240;
+}
+
+.card1, .card2, .card3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 0.2em;
+}
+
+/* 9. Clamp Style */
+.clamp {
+    display: grid;
+    place-items: center;
+}
+
+.ccard {
+    width: clamp(25ch, 50%, 46ch);
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px #a61300, -3px -3px 8px #bf4030;
+    padding: 0.5rem;
+    background-color: #9bde00;
+}
+
+.ccard h4{
+    font-size: clamp(0.9rem, 2.5vw, 2rem);
+}
+.cimg{
+    width: 100%;
+    height: 100px;
+    background-color: #0772a1
+}
+
+/* 10. Respect Aspect Ratio */
+.asratio {
+    display: grid;
+    place-items: center;
+}
+
+.video-card {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #ff7600;
+    padding: 0.8rem;
+}
+
+.videoAR {
+    aspect-ratio: 16 / 9;
+    background-color: #1d7074;
+    position: relative;
+}
+
+.videoAR iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}

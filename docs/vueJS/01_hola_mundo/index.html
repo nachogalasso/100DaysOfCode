@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/100DaysOfCode/vueJS/01_hola_mundo/style.css">
+    <link rel="stylesheet" href="/100DaysOfCode/normalize.css">
+    <title>VUE</title>
+
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+
+    <!-- es costumbre colocar todo lo que vaya a renderizar en la web el id o class: "app" -->
+    <div id="app">
+    
+    <!-- al momento de llamar mi app lo puedo hacer colocándolo dentro de etiquetas y luego dentro de ellas llamar entre {{}} (no olivar usar los 2 juegos de llaves) a la propiedad que estoy necesitando, podemos retornar más de una cosa  -->
+    <!-- Recordar que en su mayoria estamos trabajando con objetos, por lo tanto podemos tener uno que englobe todo y llamar a cada propiedad del objeto -->
+    <!-- <h1> {{title}} </h1>
+    <h2> {{name}} </h2>
+    <h3> {{age}} </h3> -->
+    
+    <!-- llamamos por la propiedad del objeto. Podemos usar propiedades ternarias también -->
+    <h1> {{user.title}} </h1>
+    <h2> {{user.name}} </h2>
+    <h3> {{user.age < 18 ? 'No puedes pasar' : 'Puedes pasar'}} </h3>
+    <h4> {{user.movies[1]}} </h4>
+    
+    <!-- Podemos redireccionar urls, suele usar mucho con API´s y para ello tenemos que hacer lo siguiente... utilizar el atributo 'v-bind:' antes del href="" así le indicamos que traemos algo de JS, entre las "" ponemos la propiedad del objeto que posee la url => v-bind:href="user.url" (no es necesario colocarlo entre {{}}), completamos luego en la etiqueta <a> el target y el rel -->
+    <a v-bind:href="user.url" target="_blank" rel="noreferrer noopener" title="ir a Google">Ir a Google</a>
+    
+    <!-- El v-bind lo podemos usar para traer imágenes de una web y hasta podemos acortar su escritura colocando solamente los : delante de src => :src="" Recordar que para poner las imágenes tenemos que tener el link CDN, de lo contrario no la veremos en la pantalla -->
+    <img :src="user.image" alt="Montain">
+
+    <!-- otras de las funcionalidades que tenemos con 'v-bind' es que podemos indicarle el tipo de clase que queremos que se le aplique a un elemento html, funciona igual que los 2 anteriores v-bind:class="" o :class="" esto suele utilizarse con eventos. Podemos pasar una propiedad del objeto como class => :class="user.classValue" -->
+    <h2 :class="user.classValue">{{user.title}}</h2>
+
+    <!-- podemos modificar propiedades dentro de nuestro HTML => <h2 :class="user.classValue">{{user.title = "good"}}</h2> Esto nos permite usar el operador ternario y con ello trabajar con condicionales. Si usamos <h2 :class="user.classValue">{{user.age >= 18 ? user.classValue = "good" : user.classValue = "error";}} Podremos ver que dependiendo de la edad tendremos un color u otro en la letra, pero de esta manera tendremos errores con VUE, por ello tenemos que hacerlo de una manera diferente. Para solucionar este inconveniente tenemos que usar 'v-if' y 'v-else'-->
+    <h3 v-if="user.age > 18" class="good">Eres mayor de edad</h3>
+    <h3 v-else="" class="error">Eres menor de edad</h3>
+    <!-- como 'v-else' podemos poner una etiqueta <p> u otro tipo de <h4>. Otra de las cosas que podemos hacer es colocar la directiva como <h3 v-else class="error">Eres menor de edad</h3> -->
+
+    <!-- Podemos utilizar los operadores lógicos para ajustar nuestras condiciones y en caso de que necesitamos agregar más condiciones podemos usar el 'v-elseif' -->
+    <h4 v-if="user.age <= 0 || user.age >= 110" class="range_error">Verifica tu edad</h4>
+    <h4 v-else-if="user.age > 18" class="good">Eres mayor de edad</h4>
+    <h4 v-else class="error">Eres menor de edad</h4>
+
+    <!-- Podemos iterar a través de un array utilizando el comando v-for, que al colocarlo por ejemplo dentro de una etiqueta <li> al iterar por el array irá generando los <li> necesarios para cada valor de array. La iteración dudará de acuerdo al array.length, cuando llegue al último elemento termina. La sintaxis a utilizar es => <li v-for="movie in user.movies">{{}}</li>. Tenemos que tener presente que además tenemos que darle una clave identificatoria única a cada elemento especialmente para cuando trabajamos con API y para ello tenemos que agregarle un key="index", que para tomar y poder operar con él conviene usar el v-bind sobre el key => :key="index". Este 'index' conviene agregarlo también al elemento a iterar, (movie, index). El comando nos queda => <li v-for="(movie, index) in user.movies" :key="index">{{index}} = {{movie}}</li> -->
+    <ul>
+        <li v-for="(movie, index) in user.movies" :key="index">{{index}} = {{movie}}</li>
+    </ul>
+
+    </div>
+
+
+
+    <script src="/100DaysOfCode/vueJS/01_hola_mundo/main.js"></script>
+
+    <!-- luego de la script de js tenemos que montar la que creamos para VUE -->
+    <script>
+        // para las clases usamos '.nombreClase' y para las id '#nombreId'
+        const mountApp = app.mount('#app');
+    </script>
+</body>
+</html>

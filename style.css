@@ -1,0 +1,374 @@
+/* font-family: 'Lora', serif;
+font-family: 'Ubuntu', sans-serif; */
+
+/* =========
+     INDEX
+   ========= 
+1. RESET values
+2. NAVIGATION BAR
+    2.1 HEADER ON TOP
+    2.2 NAVBAR
+3. WELCOME SECTION
+    3.1 INFO CONTAINER
+    3.2 PHOTO
+    3.3 TEXT STYLE
+4. MAIN PROJECTS
+    4.1 PROJECTS CONTAINER
+    4.2 PROJECT CARDS
+    4.3 PROJECT TEXT
+    4.4 PROJECT BUTTON
+5. CONTACT
+    5.1 CONTACT CONTAINER
+    5.2 CONTACT ICONS
+    5.3 CONTACT STYLE
+6. MEDIA QUERY
+    6.1 TABLET 
+    6.2 DESKTOP */
+
+
+/* ===========
+    1. RESET
+   =========== */
+:root {
+    --title: 'Ubuntu', Arial, Helvetica, sans-serif;
+    --text: 'Lora' , Arial, Helvetica, serif;
+    --red: rgba(187,10,33);
+    --grey: rgba(211,212,217);
+    --lightblue: rgba(75,136,162);
+    --black: rgba(37,38,39);
+    --white: rgba(255,249,251);
+}
+html {
+    font-size: 62.5%; 
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+p {
+    font-family: var(--text);
+    font-size: 1.8em;
+}
+
+h1, h2 {
+    font-family: var(--title);
+}
+
+/* ============
+    2. NAVBAR
+   ============ */
+
+/* 2.1 HEADER ON TOP */
+header {
+    margin: 0;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+/* 2.2 NAVBAR */
+.navbar {
+    background-color: var(--red);
+}
+.navbar__list {
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 0;
+    margin: 0;
+}
+.navbar__item, .contact-item {
+    list-style-type: none;
+    padding: 1em;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.navbar__item a {
+    display: block;
+    text-decoration: none;
+    font-family: var(--text);
+    font-size: 2em;
+    color: #fff;
+    padding-left: .2em;
+
+}
+
+.navbar__item:hover, a:hover {
+    background-color: var(--black);
+    color: #00769C;
+}
+
+/* =============
+    3. WELCOME
+   ============= */
+
+.welcome-section {
+    background-color: var(--grey);
+}
+
+/* 3.1 INFO CONTAINER */
+.welcome__container {
+    margin: 0 auto;
+    width: 32rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* 3.2 PHOTO */
+.welcome-section_photo {
+    width: 20em;
+    padding: 1em;
+    margin: 2.5em 0;
+}
+.welcome-section_photo img {
+    border-radius: 50%;
+    box-shadow: .1rem .1rem 3rem black;
+}
+
+/* 3.3 TEXT STYLE */
+.welcome__container h1 {
+    font-size: 2.8em;
+    margin: 0;
+    padding-bottom: .3em;
+}
+
+.welcome__container h2 {
+    font-size: 2.2em;
+    margin: 0;
+}
+
+.welcome__container p {
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* ==========
+    4. MAIN
+   ========== */
+.project-section {
+    background-color: var(--lightblue);
+
+}
+/* 4.1 PROJECTS CONTAINER */
+.main__projects-container {
+    width: 32rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main-projects_title {
+    font-size: 2.2em;
+    margin: .7em 0;
+}
+
+/* 4.2 PROJECTS CARDS */
+.main-projects_cardcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-projects_card {
+    width: 25rem;
+    padding: .2em;
+    margin-bottom: 1.5em;
+    box-shadow: .2em .2em 2em #000;
+    background-color: var(--grey);
+    border-radius: .5em;
+}
+.main-projects_card img {
+    border-radius: .6em;
+    padding: .1em;
+}
+
+/* 4.3 PROJECT TEXT */
+.main-projects_card p {
+    text-align: center;
+    font-weight: bold;
+    font-variant: small-caps;
+    color: #00769C;
+}
+
+/* 4.4 PROJECT BUTTON */
+.main-projects_button {
+    background-color: var(--grey);
+    color: #00769C;
+    font-family: var(--text);
+    padding: .5em 1em;
+    border-radius: 1.2em;
+    font-weight: bold;
+    border: none;
+    box-shadow: .2em .2em 2em #000;
+    margin-bottom: 2rem;
+    font-size: 1.3em;
+}
+
+
+
+/* =============
+    5. CONTACT
+   ============= */
+.section__contact {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+/* 5.1 CONTACT CONTAINER */
+.section__contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 32rem;
+    margin: 0 auto;
+}
+
+/* 5.2 CONTACT ICONS */
+.section__contact-icons {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    align-items: center;
+    text-align: center;
+}
+
+/* 5.3 CONTACT STYLE */
+.contact-item {
+    flex-basis: calc( 50% - 1rem);
+    
+}
+.contact-item a {
+    display: block;
+    text-decoration: none;
+    font-family: var(--text);
+    color: #fff;
+    font-size: 1.3em;
+}
+
+.contact-item a:hover {
+    color: var(--lightblue);
+}
+
+.fas, .fab {
+    padding-right: .5em;
+    padding-left: .5em;
+}
+
+/* ============
+    5. FOOTER
+   ============ */
+.footer {
+    display: flex;
+    justify-content: center;
+    border-top: .5em solid var(--red);
+}
+.footer p {
+    font-size: 1em;
+    padding-right: 1em;
+}
+
+
+/* =================
+    6. MEDIA QUERY
+   ================= */
+
+/* 6.1 TABLET */
+@media screen and (min-width:400px) {
+    
+    /* WELCOME STYLE */
+    
+
+    .welcome__container p {
+        text-align: left;
+        line-height: 1.5;
+    }
+    /* PROJECTS CONTAINER */
+    .main__projects-container {
+        width: 100%;
+        display: block;
+        text-align: center;
+
+    }
+    
+    .main-projects_title {
+        font-size: 3em;
+        margin: 0 0 1em;
+        padding-top: .5em;
+    }
+    /* PROJECTS CARD CONTAINER */
+    .main-projects_cardcontainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+        grid-gap: 2em;
+        max-width: 100rem;
+        margin: 0 auto;
+    }
+    /* PROJECTS CARDS */
+    .main-projects_card {
+        place-self: center;
+        margin: 0;
+        
+    }
+    /* BUTTON */
+    .main-projects_button {
+        margin: 1.5em auto;
+        width: 15em;
+    }
+}
+
+/* 6.2 DESKTOP */
+
+@media screen and (min-width:800px) {
+    /* WELCOME STYLE */
+    .welcome-section {
+        display: flex;
+        justify-content: center;
+        padding: 1rem 0 4rem;
+    }
+    .welcome__container {
+        margin: auto;
+        width: 115rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: auto; 
+        justify-items: center;
+    }
+
+    .welcome-section_photo {
+        width: 80%;
+        height: 80%;
+        grid-column: 1 / 2;
+        grid-row: 1 / 4;
+        
+    }
+    .welcome-section_photo img {
+        /* border-radius: 0; */
+        /* border: .5em solid black; */
+        opacity: .9;
+        
+    }
+
+    .welcome__container h1 {
+        font-size: 3.5em;
+        padding-bottom: 0;
+        align-self: flex-end;
+    }
+
+    .welcome__container h2 {
+        font-size: 2.8em;
+        margin: 0;
+    }
+}

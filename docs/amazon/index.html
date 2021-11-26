@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/amazon/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>Movies Library</title>
+</head>
+<body>
+    <!-- HEADER AND NAVIGATION START -->
+    <header>
+        <div id="toggle-menu" class="toggle-menu hide">
+            <div class="toggle-menu__icon"></div>
+        </div>
+        <nav class="nav__menu">
+            <ul class="nav__list" id="main-menu">
+                <div class="nav__list-left">
+                    <li class="list-item logo">
+                        <img src="/amazon/assets/Amazonlogo.webp" alt="Amazon_Logo">
+                    </li>
+                    <li class="list-item under">Inicio</li>
+                    <li class="list-item under">Series</li>
+                    <li class="list-item under">Peliculas</li>
+                    <li class="list-item under">Infantil</li>
+                </div>
+                <div class="nav__list-right">
+                    <li class="list-item search-container">
+                        <i class="fas fa-search"></i>
+                        <input type="search" placeholder="Buscar" id="search" name="search">
+                    </li>
+                    <li class="list-item circle">
+                        <i class="fas fa-user-circle"></i>
+                    </li>
+                    <li class="list-item user arrow">User
+                        <i class="fas fa-sort-down"></i>
+                    </li>
+                </div>
+            </ul>
+            
+        </nav>
+        <figure id="logo" class="logo-align hide">
+            <img src="/amazon/assets/Amazonlogo.webp" alt="Amazon_Logo">
+        </figure>
+    </header>
+    <!-- HEADER AND NAVIGATION END -->
+
+    <!-- MOVIE GALLERY START -->
+    <main class="main__gallery">
+        <section class="main__gallery-container">
+            
+            <!-- First Movie card start-->
+            <div class="main__gallery-cards">
+                <figure class="gallery-card">
+                    <img class="poster view" src="/amazon/assets/beach_bum.webp" alt="The_Beach_Bum">
+                    <i class="far fa-play-circle play"></i>
+                </figure>
+                <div class="cards__description">
+                    <div class="cards__description-left">
+                        <p class="text">The Beach Bum</p>
+                        <ul class="cards__list">
+                            <li class="cards__list-item"><i class="fab fa-imdb"></i></li>
+                            <li class="cards__list-item">5.5</li>
+                            <li class="cards__list-item">2019</li>
+                            <li class="cards__list-item">R</li>
+                        </ul>
+                    </div>
+                    <div class="cards__description-right">
+                        <div data-title="Add to List" class="cross"></div>
+                    </div>
+                </div>
+            </div>
+                
+            <!-- El contenedor del video responsive y modal -->
+            <div class="modal">
+                <div class="modal-video video">
+                    <!-- boton para cerrar el modal -->
+                    <span class="closeBtn">&times;</span>
+                    
+                    
+                </div>
+            </div>
+            <!-- First Movie card end-->
+
+            <!-- Second Movie card start-->
+
+            <div class="main__gallery-cards">
+                <figure class="gallery-card">
+                    <img class="poster view" src="/amazon/assets/glass2.webp" alt="Glass">
+                    <i class="far fa-play-circle play modalBtn"></i>
+                </figure>
+                <div class="cards__description">
+                    <div class="cards__description-left">
+                        <p class="text">Glass</p>
+                        <ul class="cards__list">
+                            <li class="cards__list-item"><i class="fab fa-imdb"></i></li>
+                            <li class="cards__list-item">6.6</li>
+                            <li class="cards__list-item">2019</li>
+                            <li class="cards__list-item">R</li>
+                        </ul>
+                    </div>
+                    <div class="cards__description-right">
+                        <div class="cross"></div>
+                    </div>
+                </div>
+            </div>
+                
+            <!-- El contenedor del video responsive y modal -->
+            <div id="simpleModal" class="modal">
+                <div class="modal-video video">
+                    <!-- boton para cerrar el modal -->
+                    <span class="closeBtn">&times;</span>
+                    <iframe src="https://www.youtube.com/embed/95ghQs5AmNk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="center"></iframe>
+                    
+                </div>
+            </div>
+            <!-- Second Movie card end -->
+
+            <!-- Third Movie card start-->
+
+            <div class="main__gallery-cards">
+                <figure class="gallery-card">
+                    <img class="poster view" src="/amazon/assets/johnwickCh3.webp" alt="John_Wick_Chapter3">
+                    <i class="far fa-play-circle play modalBtn"></i>
+                </figure>
+                <div class="cards__description">
+                    <div class="cards__description-left">
+                        <p class="text">John Wick (Chapter III)</p>
+                        <ul class="cards__list">
+                            <li class="cards__list-item"><i class="fab fa-imdb"></i></li>
+                            <li class="cards__list-item">6.6</li>
+                            <li class="cards__list-item">2019</li>
+                            <li class="cards__list-item">R</li>
+                        </ul>
+                    </div>
+                    <div class="cards__description-right">
+                        <div class="cross"></div>
+                    </div>
+                </div>
+            </div>
+                
+            <!-- El contenedor del video responsive y modal -->
+            <div class="modal">
+                <div class="modal-video video">
+                    <!-- boton para cerrar el modal -->
+                    <span>&times;</span>
+                </div>
+            </div>
+            <!-- Third Movie card end-->
+
+            <!-- Fourth Movie card start-->
+            <div class="main__gallery-cards">
+                <figure class="gallery-card">
+                    <img class="poster view" src="/amazon/assets/Joker.webp" alt="Joker">
+                    <i class="far fa-play-circle play"></i>
+                </figure>
+                <div class="cards__description">
+                    <div class="cards__description-left">
+                        <p class="text">Joker</p>
+                        <ul class="cards__list">
+                            <li class="cards__list-item"><i class="fab fa-imdb"></i></li>
+                            <li class="cards__list-item">6.6</li>
+                            <li class="cards__list-item">2019</li>
+                            <li class="cards__list-item">R</li>
+                        </ul>
+                    </div>
+                    <div class="cards__description-right">
+                        <div class="cross"></div>
+                    </div>
+                </div>
+            </div>
+                
+            <!-- El contenedor del video responsive y modal -->
+            <div class="modal">
+                <div class="modal-video video">
+                    <!-- boton para cerrar el modal -->
+                    <span>&times;</span>
+                </div>
+            </div>
+            <!-- Fourth Movie card end -->
+
+            <!-- Fifth Movie card start-->
+            <div class="main__gallery-cards">
+                <figure class="gallery-card">
+                    <img class="poster view" src="/amazon/assets/lucyintheskay.webp" alt="Lucy_in_the_sky">
+                    <i class="far fa-play-circle play"></i>
+                </figure>
+                <div class="cards__description">
+                    <div class="cards__description-left">
+                        <p class="text">Lucy in the sky</p>
+                        <ul class="cards__list">
+                            <li class="cards__list-item"><i class="fab fa-imdb"></i></li>
+                            <li class="cards__list-item">6.6</li>
+                            <li class="cards__list-item">2019</li>
+                            <li class="cards__list-item">R</li>
+                        </ul>
+                    </div>
+                    <div class="cards__description-right">
+                        <div class="cross"></div>
+                    </div>
+                </div>
+            </div>
+                
+            <!-- El contenedor del video responsive y modal -->
+            <div class="modal">
+                <div class="modal-video video">
+                    <!-- boton para cerrar el modal -->
+                    <span>&times;</span>
+                </div>
+            </div>
+            <!-- Fifth Movie card end -->
+
+            <!-- Sixth Movie card start -->
+            <div class="main__gallery-cards">
+                <figure class="gallery-card">
+                    <img class="poster" src="/amazon/assets/midsommar.webp" alt="Midsommar">
+                    <i class="far fa-play-circle play"></i>
+                </figure>
+                <div class="cards__description">
+                    <div class="cards__description-left">
+                        <p class="text">Midsommar</p>
+                        <ul class="cards__list">
+                            <li class="cards__list-item"><i class="fab fa-imdb"></i></li>
+                            <li class="cards__list-item">6.6</li>
+                            <li class="cards__list-item">2019</li>
+                            <li class="cards__list-item">R</li>
+                        </ul>
+                    </div>
+                    <div class="cards__description-right">
+                        <div class="cross"></div>
+                    </div>
+                </div>
+            </div>
+                
+            <!-- El contenedor del video responsive y modal -->
+            <div class="modal">
+                <div class="modal-video video">
+                    <!-- boton para cerrar el modal -->
+                    <span>&times;</span>
+                </div>
+            </div>
+            <!-- Sixth Movie card end -->
+
+            <!-- Seventh Movie card start -->
+            <div class="main__gallery-cards">
+                <figure class="gallery-card">
+                    <img class="poster" src="/amazon/assets/mountain.webp" alt="Mountain">
+                    <i class="far fa-play-circle play"></i>
+                </figure>
+                <div class="cards__description">
+                    <div class="cards__description-left">
+                        <p class="text">Mountain</p>
+                        <ul class="cards__list">
+                            <li class="cards__list-item"><i class="fab fa-imdb"></i></li>
+                            <li class="cards__list-item">6.6</li>
+                            <li class="cards__list-item">2019</li>
+                            <li class="cards__list-item">R</li>
+                        </ul>
+                    </div>
+                    <div class="cards__description-right">
+                        <div class="cross"></div>
+                    </div>
+                </div>
+            </div>
+                
+            <!-- El contenedor del video responsive y modal -->
+            <div class="modal">
+                <div class="modal-video video">
+                    <!-- boton para cerrar el modal -->
+                    <span>&times;</span>
+                </div>
+            </div>
+            <!-- Seventh Movie card end -->
+
+            <!-- Eigth Movie card start -->
+            <div class="main__gallery-cards">
+                <figure class="gallery-card">
+                    <img class="poster view" src="/amazon/assets/parasite.webp" alt="Parasite">
+                    <i class="far fa-play-circle play"></i>
+                </figure>
+                <div class="cards__description">
+                    <div class="cards__description-left">
+                        <p class="text">Parasite</p>
+                        <ul class="cards__list">
+                            <li class="cards__list-item"><i class="fab fa-imdb"></i></li>
+                            <li class="cards__list-item">6.6</li>
+                            <li class="cards__list-item">2019</li>
+                            <li class="cards__list-item">R</li>
+                        </ul>
+                    </div>
+                    <div class="cards__description-right">
+                        <div class="cross"></div>
+                    </div>
+                </div>
+            </div>
+                
+            <!-- El contenedor del video responsive y modal -->
+            <div class="modal">
+                <div class="modal-video video">
+                    <!-- boton para cerrar el modal -->
+                    <span>&times;</span>
+                </div>
+            </div>
+            <!-- Eight Movie card end -->
+
+            <!-- Nineth Movie card start -->
+            <div class="main__gallery-cards">
+                <figure class="gallery-card">
+                    <img class="poster" src="/amazon/assets/transit.webp" alt="Transit">
+                    <i class="far fa-play-circle play"></i>
+                </figure>
+                <div class="cards__description">
+                    <div class="cards__description-left">
+                        <p class="text">Transit</p>
+                        <ul class="cards__list">
+                            <li class="cards__list-item"><i class="fab fa-imdb"></i></li>
+                            <li class="cards__list-item">6.6</li>
+                            <li class="cards__list-item">2019</li>
+                            <li class="cards__list-item">R</li>
+                        </ul>
+                    </div>
+                    <div class="cards__description-right">
+                        <div class="cross"></div>
+                    </div>
+                </div>
+            </div>
+                
+            <!-- El contenedor del video responsive y modal -->
+            <div class="modal">
+                <div class="modal-video video">
+                    <!-- boton para cerrar el modal -->
+                    <span>&times;</span>
+                </div>
+            </div>
+            <!-- Nineth Movie card end -->
+
+            <!-- Ten Movie card start -->
+            <div class="main__gallery-cards">
+                <figure class="gallery-card">
+                    <img class="poster view" src="/amazon/assets/uncutgems.webp" alt="Uncut_Gems">
+                    <i class="far fa-play-circle play"></i>
+                </figure>
+                <div class="cards__description">
+                    <div class="cards__description-left">
+                        <p class="text">Uncut Gems</p>
+                        <ul class="cards__list">
+                            <li class="cards__list-item"><i class="fab fa-imdb"></i></li>
+                            <li class="cards__list-item">6.6</li>
+                            <li class="cards__list-item">2019</li>
+                            <li class="cards__list-item">R</li>
+                        </ul>
+                    </div>
+                    <div class="cards__description-right">
+                        <div class="cross"></div>
+                    </div>
+                </div>
+            </div>
+                
+            <!-- El contenedor del video responsive y modal -->
+            <div class="modal">
+                <div class="modal-video video">
+                    <!-- boton para cerrar el modal -->
+                    <span>&times;</span>
+                </div>
+            </div>
+            <!-- Ten Movie card end -->
+
+            <!-- Eleven Movie card start -->
+            <div class="main__gallery-cards">
+                <figure class="gallery-card">
+                    <img class="poster" src="/amazon/assets/us.webp" alt="Us_1">
+                    <i class="far fa-play-circle play"></i>
+                </figure>
+                <div class="cards__description">
+                    <div class="cards__description-left">
+                        <p class="text">Us</p>
+                        <ul class="cards__list">
+                            <li class="cards__list-item"><i class="fab fa-imdb"></i></li>
+                            <li class="cards__list-item">6.6</li>
+                            <li class="cards__list-item">2019</li>
+                            <li class="cards__list-item">R</li>
+                        </ul>
+                    </div>
+                    <div class="cards__description-right">
+                        <div class="cross"></div>
+                    </div>
+                </div>
+            </div>
+                
+            <!-- El contenedor del video responsive y modal -->
+            <div class="modal">
+                <div class="modal-video video">
+                    <!-- boton para cerrar el modal -->
+                    <span>&times;</span>
+                </div>
+            </div>
+            <!-- Eleven Movie card end -->
+
+            <!-- Twelveth Movie card start -->
+            <div class="main__gallery-cards">
+                <figure class="gallery-card">
+                    <img class="poster" src="/amazon/assets/velvetbuzzsaw.webp" alt="Velvet_Buzzsaw">
+                    <i class="far fa-play-circle play"></i>
+                </figure>
+                <div class="cards__description">
+                    <div class="cards__description-left">
+                        <p class="text">Velvet Buzzsaw</p>
+                        <ul class="cards__list">
+                            <li class="cards__list-item"><i class="fab fa-imdb"></i></li>
+                            <li class="cards__list-item">6.6</li>
+                            <li class="cards__list-item">2019</li>
+                            <li class="cards__list-item">R</li>
+                        </ul>
+                    </div>
+                    <div class="cards__description-right">
+                        <div class="cross"></div>
+                    </div>
+                </div>
+            </div>
+                
+            <!-- El contenedor del video responsive y modal -->
+            <div class="modal">
+                <div class="modal-video video">
+                    <!-- boton para cerrar el modal -->
+                    <span>&times;</span>
+                </div>
+            </div>
+            <!-- Twelveth Movie card end -->
+
+        </section>
+    </main>
+    <script src="/amazon/amazonjs.js"></script>
+</body>
+</html>
