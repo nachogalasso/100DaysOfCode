@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formularios</title>
+    <!-- VUE CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <main id="app">
+        <h1>{{title}}</h1>
+
+        <form action="#" @submit.prevent="handleSubmit()">
+        <!-- v-model le indicamos a qué variable irá todo el valor, como tenemos creado un objeto en main.js con el nombre datos, veremos que si en el input escribo algo automáticamente se escribe en la etiqueta <p> que tiene {{datos}} dentro. Veremos que al inicializar name y agragarlo a v-model="datos.name", veremos que ahora en la etiqueta <p> aparece el objeto name y ahora se rellena con lo que ingresemos en el input, además luego lo podremos enviar -->
+        <!-- si utilizamos v-model.trim, nos aseguramos de eliminar aquellos espacios cuando no queremos que se generen en nuestros datos  -->
+            <input type="text" placeholder="Name" v-model.trim="datos.name" />
+        <!-- En este caso los números los guardaremos en una variable de tipo "age" y haremos lo mismo que el punto anterior, creamos el objeto age y luego le asignamos el v-model="datos.age" (si no creamos el objeto, veremos que VUE lo genera automáticamente). Si yo tengo creado el objeto y luego modifico el input, veremos que el número por defecto se modifica, pero además el nuevo número lo convierte en string y luego todos los demás serán string, para evitar que eso suceda ingresamos el comando v-model.number. No olvidar que le podemos agregar un máx y un min -->
+            <input type="number" v-model.number="datos.age" min="15" max="80">
+
+        <!-- El objeto de los checkbox los agregamos con el nombre langs y será un array de con el valor de cada checkbox, que se irá agregando en la medida que marquemos alguna de las opciones. Veremos que al dar click, lo 1ro que manda al array es el estado de ese checkbox, que por defecto es ON, para evitar ese inconveniente tenemos que asignarle la propiedad "value" al input  -->
+            <p>Lenguajes Favoritos - checkbox</p>
+            <input type="checkbox" name="" id="js" value="Javascript" v-model="datos.langs">
+            <label for="js">Javascript</label>
+            
+            <input type="checkbox" name="" id="php" value="PHP" v-model="datos.langs">
+            <label for="php">PHP</label>
+            
+            <input type="checkbox" name="" id="py" value="Python" v-model="datos.langs">
+            <label for="py">Python</label>
+            
+            <input type="checkbox" name="" id="java" value="Java" v-model="datos.langs">
+            <label for="java">Java</label>
+    
+        <!-- Funciona igual al checkbox, es importante agregar el 'value' para que VUE lo pueda registrar. Si al crear el objeto le colocamos un valor, en los radio buttons ese valor será tomado por defecto => gender: "noanswer", cuando cargue la web, estará marcado el radio correspondiente al value="noanswer" -->
+            <p>Género - radiobutton</p>
+            <input type="radio" name="gender" id="male" value="male" v-model="datos.gender">
+            <label for="hombre">Hombre</label>
+
+            <input type="radio" name="gender" id="female" value="female" v-model="datos.gender">
+            <label for="female">Mujer</label>
+
+            <input type="radio" name="gender" id="other" value="other" v-model="datos.gender">
+            <label for="other">Otro</label>
+
+            <input type="radio" name="gender" id="noanswer" value="noanswer" v-model="datos.gender">
+            <label for="noanswer">No informa</label>
+
+            <!-- Evento submit => aquí cobra relevancia la etiqueta <form> allí es donde cargaremos el evento del v-on:submit. Veremos que al dar 'Enviar' nuestra página se recarga, para evitar ello, tenemos que usar el 'submit.prevent'. Recordar que antes tenemos que crear el objeto en el js -->
+            <input type="submit"></input>
+        </form>
+
+        <p>{{datos}}</p>
+    </main>
+
+
+<script src="/docs/vueJS/03_formularios/js/main.js"></script>
+<script src="/docs/vueJS/03_formularios/js/mountapp.js"></script>
+</body>
+</html>

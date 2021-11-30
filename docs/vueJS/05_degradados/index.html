@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Style sheets -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;700&display=swap" rel="stylesheet">
+    <title>Gradients Generator</title>
+    <!-- VUE CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+
+    <main id="app">
+
+        <section class="container" :style="setColor">
+            <section class="app">
+                <h1>{{title}}</h1>
+                <form action="#" class="color">
+                    <label for="" class="label">
+                        Color 1:<input type="color" v-model="fcolor" name="" id="">
+                    </label>
+                    <label for="" class="label">
+                        Color 2:<input type="color" v-model="scolor" name="" id="">
+                    </label>
+                    <label for="" class="label">Stop %:
+                        <input type="number" name="" id="" min="0" max="100" v-model="fstop">
+                    </label>
+                    <label for="" class="label">Stop %:
+                        <input type="number" name="" id="" min="0" max="100" v-model="sstop">
+                    </label>
+                    <p class="text">HEX 1: {{fcolor}}</p>
+                    <p class="text">HEX 2: {{scolor}}</p>
+                </form>
+            
+                <!-- Al colocar el 'setColor' dentro de una etiqueta <label> y luego dentro de un <input> de tipo texto, lo que nos permite es que la propiedad quede disponible para poder copiar y pegar en nuestro proyecto -->
+                <form action="#" class="bgc-prop">
+                    <label for="">Orientation:
+                        <input type="number" name="" id="" min="-360" max="360" v-model="orientation">
+                    </label>
+                    <label for="">Property:
+                        <input type="text" :value="setColor">
+                    </label>
+                </form>
+                <!-- Nos sirve para verificar si nuestra función está trabaja correctamente -->
+                <!-- <p>{{setColor}}</p> -->
+            </section>
+        </section>
+
+        <!-- <section class="grad-box" :style="setColor"></section> -->
+    </main>
+    
+
+
+<script src="./js/main.js"></script>
+<script src="./js/mountapp.js"></script>
+</body>
+</html>
