@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- Recordar que el CDN de axios lo tenemos que colocar dentro de la etiqueta <head> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
+    <title>Peticiones PARAMETROS</title>
+</head>
+<body>
+    <main id="app">
+        <h1>{{title}}</h1>
+
+        <!-- creamos un formulario que nos permita realizar peticiones, empezamos con un input number -->
+        <!-- No tenemos que olvidar de colocarle cuál function va a utilizar el form -->
+        <form @submit.prevent="getPost">
+            <label for="post">ID Post:
+                <input type="number" name="post" id="post" v-model.number="post">
+                <!-- es importante que al poner el v-model le indiquemos que es un número -->
+            </label>
+            <input type="submit" value="Get Post">
+        </form>
+
+        <section class="container" v-for="dato in datos"></section>
+
+    <!-- Para trabajar con los datos tenemos que convertirlos de array a objeto, ello lo hacemos en el main.js -->
+    <!-- Como no es un array, no es necesario que lo recorramos, podemos maquetar de manera dinámica -->
+
+        <section class="container">
+            <!-- puedo crear <p> y llamar a los datos utilizando {{datos.name}} -->
+                <p>Nombre: {{datos.name}}</p>
+                <p>Email: {{datos.email}}</p>
+                <p>Teléfono: {{datos.phone}}</p>
+                <p>User: {{datos.username}}</p>
+        </section>
+    </main>
+
+
+    <script src="/docs/vueJS/06_apis_js/parametros_api/js/main.js"></script>
+    <script src="/docs/vueJS/06_apis_js/parametros_api/js/mountapp.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- Recordar que el CDN de axios lo tenemos que colocar dentro de la etiqueta <head> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
+    <title>VUE - AXIOS</title>
+</head>
+<body>
+    <main id="app">
+        <h1>{{title}}</h1>
+
+        <!-- Ahora aquí es donde colocamos nuestros datos del array datos[] -->
+        <!-- No olvidemos si queremos hacer que las iteraciones sean únicas, tenemos que agregarle ek :key="dato.id" => cada iteración de los datos tendrá su propio id y será único. -->
+        <section class="container" v-for="dato in datos" :key="dato.id">
+            <!-- Si lo ponemos así solamente veremos que no nos sale nada de nuestro array, por ello conviene utilizar un v-for para recorrer los datos del array y que tome los que necesitamos -->
+            <h3>Name: {{dato.name}}</h3>
+            <!-- Si queremos agregar más información solamente tenemos que hacerlo sumando otra etiqueta que posea los datos que queremos traer -->
+            <h5>Email: {{dato.email}}</h5>
+            <!-- Seguimos agregando datos, como por ejemplo el teléfono -->
+            <h5>Teléfono: {{dato.phone}}</h5>
+            <!-- Podemos colocar links y hacer que abran en una nueva ventana, hasta le podemos agregar que los llame por su nombre de usuario -->
+            <!-- Para lograr que nos funcionen los URL, conviene que le pasemos el 'dato.website' como un template string => :href="'https://${dato.website}'" -->
+            <a :href="'https://${dato.website}'" target="_blank" rel="noreferrer noopener">{{dato.username}} website</a>
+        </section>
+
+        <!-- {{datos}} -->
+    </main>
+
+    <script src="/docs/vueJS/06_apis_js/api_vue_axios/js/main.js"></script>
+    <script src="/docs/vueJS/06_apis_js/api_vue_axios/js/mountapp.js"></script>
+</body>
+</html>
