@@ -2,6 +2,7 @@ const CACHE_NAME = "v1_cache_gradient_generator";
 const urlsToCache = [
     "./",
     "./?umt_source=web_app_manifest",
+    "./pages/fallback.html",
     "/docs/vueJS/05_degradados/assets/img/icons/16px_icon.png",
     "/docs/vueJS/05_degradados/assets/img/icons/32px_icon.png",
     "/docs/vueJS/05_degradados/assets/img/icons/64px_icon.png",
@@ -69,6 +70,8 @@ self.addEventListener('fetch', e => {
                 return fetch(e.request)
 
             }
+        ).catch( // Agregando una página por las dudas para el offline, recordar q la tenemos q poner arriba
+            () => caches.match("./pages/fallback.html")
         )
     )
 })

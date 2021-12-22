@@ -75,6 +75,17 @@
                 </form>
             
                 <!-- Al colocar el 'setColor' dentro de una etiqueta <label> y luego dentro de un <input> de tipo texto, lo que nos permite es que la propiedad quede disponible para poder copiar y pegar en nuestro proyecto -->
+                <form class="gradient" action="#">
+                    <label for="linear">Linear
+                        <input type="radio" name="grad_display" id="linear" value="linear" v-model="picked">
+                    </label>
+                    <label for="radial">Radial
+                        <input type="radio" name="grad_display" id="radial" value="radial" v-model="picked">
+                    </label>
+                    <label for="conic">Conic
+                        <input type="radio" name="grad_display" id="conic" value="conic" v-model="picked">
+                    </label>
+                </form>
                 <form action="#" class="bgc-prop">
                     <label for="">Orientation:
                         <input type="number" name="" id="" min="-360" max="360" v-model="orientation">
@@ -84,7 +95,7 @@
                     </label>
                 </form>
                 <!-- Nos sirve para verificar si nuestra función está trabaja correctamente -->
-                <!-- <p>{{setColor}}</p> -->
+                <p>{{setColor}}</p>
             </section>
         </section>
 
