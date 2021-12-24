@@ -25,6 +25,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <!-- Icons -->
     <link rel="shortcut icon" href="/docs/vueJS/05_degradados/assets/img/icons/48px_icon.png" type="image/png">
     <link rel="apple-touch-icon" href="/docs/vueJS/05_degradados/assets/img/icons/48px_icon.png">
@@ -57,22 +58,24 @@
         <section class="container" :style="setColor">
             <section class="app">
                 <h1>{{title}}</h1>
-                <form action="#" class="color">
+                <form action="#" class="color grid">
                     <label for="" class="label">
                         Color 1:<input type="color" v-model="fcolor" name="" id="">
+                    </label>
+                    <p class="text">HEX 1: {{fcolor}}</p>
+                    <label for="" class="label">Stop %:
+                        <input type="number" name="" id="" min="0" max="100" v-model="fstop">
                     </label>
                     <label for="" class="label">
                         Color 2:<input type="color" v-model="scolor" name="" id="">
                     </label>
-                    <label for="" class="label">Stop %:
-                        <input type="number" name="" id="" min="0" max="100" v-model="fstop">
-                    </label>
+                    <p class="text">HEX 2: {{scolor}}</p>
                     <label for="" class="label">Stop %:
                         <input type="number" name="" id="" min="0" max="100" v-model="sstop">
                     </label>
-                    <p class="text">HEX 1: {{fcolor}}</p>
-                    <p class="text">HEX 2: {{scolor}}</p>
-                </form>
+                <nncolor></nncolor>
+            </form>
+                <i class="fas fa-plus" aria-label="add color" title="Add more colors" @click="newColor">Add more colors</i>
             
                 <!-- Al colocar el 'setColor' dentro de una etiqueta <label> y luego dentro de un <input> de tipo texto, lo que nos permite es que la propiedad quede disponible para poder copiar y pegar en nuestro proyecto -->
                 <form class="gradient" action="#">
@@ -87,22 +90,38 @@
                     </label>
                 </form>
                 <form action="#" class="bgc-prop">
-                    <label for="">Orientation:
-                        <input type="number" name="" id="" min="-360" max="360" v-model="orientation">
+                    <label for="ort" v-if="this.picked === 'linear'" class="show">Orientation:
+                        <input type="number" name="ort" id="" min="-360" max="360" v-model="orientation">
                     </label>
                     <label for="">Property:
                         <input type="text" :value="setColor">
                     </label>
                 </form>
                 <!-- Nos sirve para verificar si nuestra función está trabaja correctamente -->
-                <p>{{setColor}}</p>
+                <!-- <p>{{setColor}}</p> -->
             </section>
         </section>
 
         <!-- <section class="grad-box" :style="setColor"></section> -->
     </main>
     
-
+<script>
+    Vue.component('nncolor', {
+    
+        template: 
+            `
+            <label for="" class="label">
+                {{color}} :<input type="color" v-model="ncolor" name="" id="">
+            </label>
+            <p class="text">HEX 1: {{ncolor}}</p>
+            <label for="" class="label">Stop %:
+                <input type="number" name="" id="" min="0" max="100" v-model="fstop">
+            </label>
+            `
+        
+    })
+    
+</script>
 
 <script src="./load_sw.js"></script>
 <script src="./js/main.js"></script>
