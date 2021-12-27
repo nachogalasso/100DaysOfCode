@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- STYLE -->
+    <link rel="stylesheet" href="/docs/vueJS/07_movie_api/style.css">
+    <title>Movie API</title>
+    <!-- VUE CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    
+    <main id="app">
+        <h1>{{title}}</h1>
+
+        <!-- Ahora vamos a maquetar la información -->
+        <section class="container">
+            <!-- recordar que siempre tenemos que llamar a nuestra propiedad con {{movieData.'propiedad'}} -->
+            <h3 class="mov_title">Movie: {{movieData.Title}}</h3>
+
+            <h4 class="mov_genre">Genre: {{movieData.Genre}}</h4>
+            
+            <p class="mov_year">Year: {{movieData.Year}}</p>
+            <p class="mov_actors">Actors: {{movieData.Actors}}</p>
+
+            <!-- para el caso de las imágenes en el src="" tenemos que poner el llamado a VUE pero sin los {{}}, no olvidar que tenemos que ponerle los : delante de src => :src="movieData.Poster" -->
+            <!-- Con el alt podemos hacer lo mismo llamar desde la API con :alt="" -->
+            <img :src="movieData.Poster" alt="Poster_Spiderman_Movie" class="mov_poster">
+        </section>
+
+
+        <!-- Para saber si nuestra información es recolectada correctamente hacemos un <p> -->
+        <p>{{movieData}}</p>
+    </main>
+
+
+    <script src="/docs/vueJS/07_movie_api/js/main.js"></script>
+    <script src="/docs/vueJS/07_movie_api/js/mountapp.js"></script>
+</body>
+</html>

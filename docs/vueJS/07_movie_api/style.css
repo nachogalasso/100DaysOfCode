@@ -1,0 +1,32 @@
+/* ==================
+    1. RESET VALUES
+   ================== */
+
+html {
+    font-size: 62.5%; 
+    box-sizing: border-box;
+    
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mov_title {
+    font-size: 3.5rem;
+}
+
+.mov_genre {
+    font-size: 2rem;
+}
+
+.mov_year,
+.mov_actors {
+    font-size: 1.6rem;
+}
