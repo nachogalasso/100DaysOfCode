@@ -107,13 +107,20 @@
     
 <script>
     Vue.component('nncolor', {
-    
+        // render(createElement) {
+        //     return createElement('label', this.color)
+        // },
+        // data() {
+        //     return {
+        //         color: '#ff000'
+        //     }
+        // }
         template: 
             `
             <label for="" class="label">
-                {{color}} :<input type="color" v-model="ncolor" name="" id="">
+                {{this.color}} :<input type="color" v-model="ncolor" name="" id="">
             </label>
-            <p class="text">HEX 1: {{ncolor}}</p>
+            <p class="text">HEX 1: {{this.ncolor}}</p>
             <label for="" class="label">Stop %:
                 <input type="number" name="" id="" min="0" max="100" v-model="fstop">
             </label>
