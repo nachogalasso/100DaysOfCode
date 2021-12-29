@@ -6,33 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- STYLE -->
     <link rel="stylesheet" href="/docs/vueJS/07_movie_api/style.css">
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap" rel="stylesheet">
     <title>Movie API</title>
     <!-- VUE CDN -->
     <script src="https://unpkg.com/vue@next"></script>
 </head>
 <body>
     
-    <main id="app">
+    <main id="app" class="app">
         <h1>{{title}}</h1>
+        <!-- Creamos nuestro formulario de búsqueda de películas -->
+        <form action="" @submit.prevent="getMovie" class="form">
+            <!-- Recordar que al 'form' le tenemos que llamar la function getMovie(), así realiza la búsqueda en la API -->
+            <section class="search-container">
+                <label for="" class="search">
+                    <i class="fas fa-search"></i>
+                    <input type="search" v-model.trim="movieTitle" placeholder="Movie Search">
+                    
+                </label>
+                <input type="submit" value="Get Movie" class="btn">
+            </section>
+            <!-- Luego creamos un botón 'submit' para poder recibir los valores a buscar -->
+        </form>
 
         <!-- Ahora vamos a maquetar la información -->
         <section class="container">
-            <!-- recordar que siempre tenemos que llamar a nuestra propiedad con {{movieData.'propiedad'}} -->
-            <h3 class="mov_title">Movie: {{movieData.Title}}</h3>
-
-            <h4 class="mov_genre">Genre: {{movieData.Genre}}</h4>
-            
-            <p class="mov_year">Year: {{movieData.Year}}</p>
-            <p class="mov_actors">Actors: {{movieData.Actors}}</p>
-
             <!-- para el caso de las imágenes en el src="" tenemos que poner el llamado a VUE pero sin los {{}}, no olvidar que tenemos que ponerle los : delante de src => :src="movieData.Poster" -->
             <!-- Con el alt podemos hacer lo mismo llamar desde la API con :alt="" -->
-            <img :src="movieData.Poster" alt="Poster_Spiderman_Movie" class="mov_poster">
+            <figure class="img-container">
+                <img :src="movieData.Poster" :alt="movieData.imdbID" class="mov_poster">
+            </figure>
+
+            <!-- recordar que siempre tenemos que llamar a nuestra propiedad con {{movieData.'propiedad'}} -->
+            <section class="movie-desc">
+                <h3 class="mov_title">{{movieData.Title}}</h3>
+                <p class="mov_genre"><strong>Genre:</strong> {{movieData.Genre}}</p>
+                
+                <p class="mov_year"><strong>Year:</strong> {{movieData.Year}}</p>
+                <p class="mov_actors"><strong>Actors:</strong> {{movieData.Actors}}</p>
+            </section>
+
         </section>
 
 
         <!-- Para saber si nuestra información es recolectada correctamente hacemos un <p> -->
-        <p>{{movieData}}</p>
+        <!-- <p>{{movieData}}</p> -->
     </main>
 
 
