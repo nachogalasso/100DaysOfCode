@@ -47,12 +47,6 @@
             "purpose": "any"
         },
         {
-            "src": "/docs/vueJS/07_movie_api/assets/icons/192px_icon.png",
-            "sizes": "192x192",
-            "type": "img/png",
-            "purpose": "any"
-        },
-        {
             "src": "/docs/vueJS/07_movie_api/assets/icons/256px_icon.png",
             "sizes": "256x256",
             "type": "img/png",
