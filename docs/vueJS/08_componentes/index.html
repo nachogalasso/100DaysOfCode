@@ -4,19 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Componentes - VUE</title>
     <!-- CDN -->
     <script src="https://unpkg.com/vue@next"></script>
 </head>
 <body>
-    
+    <!-- El propósito principal de los componentes es que cuando nuestro proyecto vaya escalando, sea más fácil de poder leer y nos ayuda a mantener nuestro código. Para ello creamos la carpeta "components" y luego colocamos todos nuestros componentes dentro de ella. Por standard suele colocarse en a los componentes, la primer letra en MAYÚSCULAS para poder indentificarlos, luego algunos los finalizan con .js o .vue -->
     <main id="app">
-
-        <h1>{{title}}</h1>
+        <!-- Cuando trabajos con componentes para poder llamarlos tenemos que colocar dentro de <> el name, que le pusimos al componente -->
+        <!-- <h1>{{title}}</h1> -->
+        <main-header></main-header>
+        <!-- <main-header></main-header>
+        <main-header></main-header> si colocamos más, veremos que se repiten -->
+        <country-list :country="countries"></country-list>
 
     </main>
 
+
+    <!-- Cuando trabajamos con componentes es importante que se encuentre luego de nuestro <script>main.js, con ello nos aseguramos que nuestros componentes se carguen antes de que se monte nuestra app -->
 <script src="/docs/vueJS/08_componentes/js/main.js"></script>
+<script src="/docs/vueJS/08_componentes/components/Header.js"></script>
+<script src="/docs/vueJS/08_componentes/components/Paises.js"></script>
 <script src="/docs/vueJS/08_componentes/js/mountapp.js"></script>
 </body>
 </html>

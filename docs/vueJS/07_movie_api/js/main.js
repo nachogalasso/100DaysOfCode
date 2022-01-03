@@ -30,7 +30,7 @@ const app = Vue.createApp({
             // ello podremos ingresar nuestra variable 'search' =>
 
             const data = await fetch(
-                `http://www.omdbapi.com/?apikey=ef50faf5&t=${search}`
+                `https://www.omdbapi.com/?apikey=ef50faf5&t=${search}`
                 )
             // esta información de la película, la vamos a almacenar en un objeto en data() y le pondremos el nombre 
             // de movieData
