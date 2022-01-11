@@ -36,6 +36,7 @@ export default {
     margin: 0;
     padding: 0;
     font-size: 62.5%;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
   }
   
 </style>
