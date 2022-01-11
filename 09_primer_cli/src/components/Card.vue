@@ -1,13 +1,30 @@
 <template>
   <section id="card" class="card">
-      <h4>Name Project</h4>
+      <h4>{{ name }}</h4>
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis labore dolores et dolorem, eligendi quasi odit, fuga voluptates consectetur quam, illum voluptatibus rerum sunt totam. Ullam a laboriosam ducimus commodi!</p>
+      <p>{{ description }}</p>
+      <p>Autor: {{author}}</p>
+      <div class="buttons">
+          <url-button :url="url"></url-button>
+          <url-button color="red" :url="homepage" v-if="homepage != null" title="Deploy"></url-button>
+      </div>
   </section>
 </template>
 
 <script>
-export default {
+import UrlButton from "./UrlButton.vue"
 
+export default {
+    props: {
+        name: String,
+        description: String,
+        author: String,
+        url: String,
+        homepage: String,
+    },
+    components: {
+        UrlButton,
+    }
 }
 </script>
 
@@ -28,9 +45,22 @@ export default {
     font-weight: 700;
 }
 
-.card p {
-    font-size: 1.2rem
+.card p,
+.btn {
+    font-size: 1.5rem
 }
 
+.card p:nth-child(4) {
+    font-weight: 700;
+    font-variant: small-caps;
+    color: cadetblue;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+    /* width: 100%; */
+    /* align-items: center; */
+}
 
 </style>
