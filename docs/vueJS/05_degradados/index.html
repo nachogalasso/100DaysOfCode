@@ -73,9 +73,7 @@
                     <label for="" class="label">Stop %:
                         <input type="number" name="" id="" min="0" max="100" v-model="sstop">
                     </label>
-                <nncolor></nncolor>
             </form>
-                <i class="fas fa-plus" aria-label="add color" title="Add more colors" @click="newColor">Add more colors</i>
             
                 <!-- Al colocar el 'setColor' dentro de una etiqueta <label> y luego dentro de un <input> de tipo texto, lo que nos permite es que la propiedad quede disponible para poder copiar y pegar en nuestro proyecto -->
                 <form class="gradient" action="#">
@@ -105,30 +103,6 @@
         <!-- <section class="grad-box" :style="setColor"></section> -->
     </main>
     
-<script>
-    Vue.component('nncolor', {
-        // render(createElement) {
-        //     return createElement('label', this.color)
-        // },
-        // data() {
-        //     return {
-        //         color: '#ff000'
-        //     }
-        // }
-        template: 
-            `
-            <label for="" class="label">
-                {{this.color}} :<input type="color" v-model="ncolor" name="" id="">
-            </label>
-            <p class="text">HEX 1: {{this.ncolor}}</p>
-            <label for="" class="label">Stop %:
-                <input type="number" name="" id="" min="0" max="100" v-model="fstop">
-            </label>
-            `
-        
-    })
-    
-</script>
 
 <script src="./load_sw.js"></script>
 <script src="./js/main.js"></script>

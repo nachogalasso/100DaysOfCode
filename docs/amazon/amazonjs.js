@@ -1,7 +1,7 @@
 /* Traemos los id para poder trabajar con ellos */
-const modal = document.querySelector('.simpleModal');
-const btnsopenModal = document.querySelectorAll('.modalBtn');
-const closeModal = document.getElementsByClassName('closeBtn')[0];
+const modal = document.querySelectorAll('.modal');
+const btnsOpenModal = document.querySelectorAll('.modalBtn');
+const closeModal = document.querySelectorAll('.closeBtn');
 const iconMenu = document.getElementById('toggle-menu');
 const mainMenu = document.getElementById('main-menu');
 const mainLogo = document.getElementById('logo');
@@ -12,20 +12,16 @@ iconMenu.addEventListener('click', () => {
     mainLogo.classList.toggle('logo');
 })
 
-const openModal = () => {
-    modal.classList.add('.show');
+
+for(let i=0; i < btnsOpenModal.length; i++) {
+    btnsOpenModal[i].onclick = function()  {
+        modal[i].classList.add('showed')
+    }
 }
-// openModal.addEventListener('click', () => {
-//     modal.style.display = 'block';
-    
-// })
 
-// closeModal.addEventListener('click', () => {
-//     modal.style.display = 'none';
-    
-// })
-
-// modal.addEventListener('click', () => {
-//     modal.style.display = 'none';
-// })
+for(let i=0; i < closeModal.length; i++) {
+    closeModal[i].onclick = function() {
+        modal[i].classList.remove('showed')
+    }
+}
 

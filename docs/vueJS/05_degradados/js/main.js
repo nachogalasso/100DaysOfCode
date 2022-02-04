@@ -13,11 +13,6 @@ const app = Vue.createApp({
     
     },
     
-    methods: {
-        newColor() {
-            return this.template
-        } 
-    },
     // generamos las propiedades computadas que nos permitan realizar el degradado y ver los colores en una caja.
     // para ello creamos un arrow function () => (), recordar que siempre tienen que retornar algo
     // Para probar nuestras funciones podemos pasarlas a una etiqueta <p></p> de nuestra app
